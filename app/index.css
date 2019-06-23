@@ -1,0 +1,60 @@
+@import './vars.css';
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: var(--black-color);
+    font-family: Montserrat, Helvetica Neue, Arial, sans-serif;
+    font-size: 14px;
+    height: 100%;
+}
+
+::placeholder {
+    color: gray;
+}
+
+* {
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+html, body, #app, .desktop, .mobile, .tablet {
+    height: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+}
+
+.danger {
+    color: var(--danger-color);
+}
+
+.success {
+    color: var(--success-color);
+}
+
+.primary {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.row.justify-space-between {
+    justify-content: space-between;
+}

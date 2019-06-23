@@ -1,0 +1,33 @@
+@import url("../../../vars.css");
+
+.table {
+    border-collapse: collapse;
+}
+
+.table thead th {
+    border-bottom: 1px solid var(--primary-color);
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.table tbody td {
+    padding-left: 10px;
+    text-align: left;
+}
+
+.table tbody tr {
+    height: 40px;
+    cursor: pointer;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--primary-light-color);
+}
+
+.table tbody tr:hover {
+    background-color: var(--primary-color);
+}
+

@@ -1,0 +1,28 @@
+@import url("../../vars.css");
+
+.tasks-container .board {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--primary-color);
+}
+
+.tasks-container .board .board-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+}
+
+.tasks-container .board. .board-col[draggable=true] {
+    background-color: #2c2c2c;
+}
+
+.tasks-container .board .board-col h3 {
+    margin: 0;
+}
+
+.tasks-container .board .board-col:not(:last-of-type) {
+    border-right: 1px solid var(--primary-light-color);
+}

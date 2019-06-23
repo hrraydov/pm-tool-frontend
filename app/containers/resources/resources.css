@@ -1,0 +1,18 @@
+.resources-container .resource-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.resources-container .resource-item .details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.resources-container .resource-item .actions {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}

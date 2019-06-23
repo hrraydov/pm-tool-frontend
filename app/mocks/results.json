@@ -1,0 +1,24 @@
+{
+    "limit": 0,
+    "offset": 0,
+    "totalFound": 0,
+    "content": [
+      {
+        "description": "string",
+        "createDate": "2019-04-15T12:21:34.807Z",
+        "title": "string",
+        "passed": true,
+        "score": "string",
+        "author": {
+          "firstName": "string",
+          "lastName": "string",
+          "email": "string",
+          "phone": "string"
+        },
+        "resultType": "DOCUMENT",
+        "id": "string",
+        "result": "string"
+      }
+    ]
+  }
+  

@@ -1,0 +1,36 @@
+.project-details-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-details-container .sidebar {
+    position: fixed;
+    height: 100%;
+}
+
+.desktop .project-details-container .sidebar {
+    width: 200px;
+}
+
+.desktop .project-details-container .content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+}
+
+.tablet .project-details-container .sidebar {
+    width: 200px;
+}
+
+.tablet .project-details-container .content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+}
+
+.mobile .project-details-container .sidebar {
+    width: 50px;
+}
+
+.mobile .project-details-container .content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}

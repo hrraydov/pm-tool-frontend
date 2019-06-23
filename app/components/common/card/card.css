@@ -1,0 +1,10 @@
+.card {
+    border: 0;
+    border-radius: .1875rem;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .2);
+    padding: 1.25rem;
+}

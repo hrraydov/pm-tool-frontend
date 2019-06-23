@@ -1,0 +1,40 @@
+@import url("../../../vars.css");
+
+.pagination-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.pagination-wrapper .item {
+    border: 0;
+    border-radius: 30px!important;
+    transition: all .3s;
+    padding: 0 11px;
+    margin: 0 1px;
+    min-width: 30px;
+    text-align: center;
+    box-shadow: none;
+    height: 30px;
+    line-height: 30px;
+    color: var(--black-color);
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: transparent;
+}
+
+.pagination-wrapper .item:hover {
+    background-color: hsla(0,0%,87%,.3);
+}
+
+.pagination-wrapper .item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pagination-wrapper .item.disabled {
+    cursor: default;
+}

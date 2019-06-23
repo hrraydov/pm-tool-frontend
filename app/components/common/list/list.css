@@ -1,0 +1,16 @@
+@import url("../../../vars.css");
+
+.list {
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.list .list-item {
+    padding: 10px;
+}
+
+.list .list-item:not(:last-of-type) {
+    border-bottom: 1px solid var(--primary-light-color);
+}

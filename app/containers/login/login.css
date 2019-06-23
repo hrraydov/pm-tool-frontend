@@ -1,0 +1,26 @@
+.login-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.mobile .login-content {
+    width: 80%;
+}
+
+.tablet .login-content {
+    width: 60%;
+}
+
+.desktop .login-content {
+    width: 40%;
+
+}
+
+.login-content button {
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+}

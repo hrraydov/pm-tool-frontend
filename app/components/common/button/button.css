@@ -1,0 +1,109 @@
+@import url("../../../vars.css");
+
+.button {
+    font-weight: 400;
+    font-size: .8571em;
+    line-height: 1.35em;
+    margin: 10px 1px;
+    border: 2px none;
+    border-radius: .1875rem;
+    padding: 11px 22px;
+    cursor: pointer;
+    background-color: var(--default-color);
+    color: #fff;
+    user-select: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.button:focus {
+    outline: none;
+    opacity: 1;
+}
+
+.button:hover {
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .17);
+}
+
+.button.button-small {
+    font-size: 14px;
+    border-radius: .1875rem;
+    padding: 5px 15px;
+}
+
+.button.button-large {
+    font-size: 1em;
+    border-radius: .25rem;
+    padding: 15px 48px;
+}
+
+.button.button-round {
+    border-width: 1px;
+    border-radius: 30px;
+    padding: 11px 23px;
+}
+
+.button.button-icon {
+    height: 2.375rem;
+    min-width: 2.375rem;
+    width: 2.375rem;
+    padding: 0;
+    font-size: .9375rem;
+    overflow: hidden;
+    position: relative;
+    line-height: normal;
+}
+
+.button.button-simple {
+    padding: 10px 22px;
+    border: 1px solid var(--default-color);
+    background: transparent !important;
+}
+
+.button.button-simple:hover {
+    box-shadow: none;
+}
+
+.button.button-simple.button-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.button.button-simple.button-danger {
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.button.button-simple.button-warning {
+    color: var(--warning-color);
+    border-color: var(--warning-color);
+}
+
+.button.button-simple.button-info {
+    color: var(--info-color);
+    border-color: var(--info-color);
+}
+
+.button.button-simple.button-success {
+    color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.button.button-primary {
+    background-color: var(--primary-color);
+}
+
+.button.button-danger {
+    background-color: var(--danger-color);
+}
+
+.button.button-success {
+    background-color: var(--success-color);
+}
+
+.button.button-info {
+    background-color: var(--info-color);
+}
+
+.button.button-warning {
+    background-color: var(--warning-color);
+}

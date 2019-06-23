@@ -1,0 +1,56 @@
+@import url("../../../vars.css");
+
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border: 1px solid var(--light-gray);
+    border-radius: 30px;
+    padding: 5px 18px;
+    transition: color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
+    box-shadow: none;
+}
+
+.input-wrapper.has-focus {
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
+}
+
+.input-wrapper.has-success.has-focus {
+    border-color: var(--success-color);
+}
+
+.input-wrapper.has-error {
+    border-color: var(--danger-color);
+}
+
+.input-wrapper .input {
+    width: 100%;
+    color: var(--black-color);
+    line-height: 20px;
+    font-size: 12px;
+    border: none
+}
+
+.input-wrapper.has-focus .input {
+    outline: none;
+}
+
+.input-wrapper.has-success .right-icon {
+    color: var(--success-color);
+}
+
+.input-wrapper.has-error .right-icon {
+    color: var(--danger-color);
+}
+
+.input-wrapper .left-item-wrapper {
+    margin-right: 5px;
+}
+
+.input-wrapper .right-item-wrapper {
+    margin-left: 5px;
+}
+
