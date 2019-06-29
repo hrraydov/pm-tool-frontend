@@ -10,7 +10,6 @@
 .sidebar .sidebar-item {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     height: 50px;
     text-decoration: none;
@@ -18,10 +17,41 @@
     font-size: 16px;
 }
 
+.sidebar .sidebar-item.center {
+    margin: 0 auto;
+}
+
+.sidebar .sidebar-item.center:hover {
+    background-color: transparent;
+}
+
+.sidebar .sidebar-item.center svg {
+    margin-left: 0;
+}
+
+.sidebar .end-section {
+    margin: auto auto 0 auto;
+}
+
+.sidebar .end-section .sidebar-item svg {
+    margin-left: 0;
+}
+
+.sidebar .end-section .sidebar-item:hover {
+    background-color: transparent;
+}
+
+.sidebar .sidebar-item svg {
+   margin-left: 20px;
+}
+
+.sidebar .sidebar-item span {
+    margin-left: 10px;
+}
+
 .sidebar .sidebar-item:hover {
     background-color: hsla(0,0%,100%,.2);
 }
-
 
 .sidebar .sidebar-item .icon {
     margin-right: 5px;

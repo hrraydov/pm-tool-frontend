@@ -1,0 +1,25 @@
+@import url("../../../vars.css");
+
+.navigation {
+    position: fixed;
+    height: 60px;
+    top: 0;
+    margin: 0 0 20px 0;
+    background: var(--primary-color);
+    z-index: 5;
+    width: 100%;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .17);
+}
+
+.navigation .navigation-content {
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navigation .navigation-content a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 15px;
+}

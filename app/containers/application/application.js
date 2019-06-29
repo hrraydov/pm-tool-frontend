@@ -6,8 +6,7 @@ import { Strings } from 'helpers';
 import './application.css';
 
 const Application = () => (
-    <div>
-    </div>
+    <div />
 );
 
 export default connect(

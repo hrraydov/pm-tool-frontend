@@ -20,6 +20,7 @@ import {
     faBook,
     faWallet,
     faInfo,
+    faDoorOpen,
 } from '@fortawesome/free-solid-svg-icons';
 
 import './icon.css';
@@ -44,6 +45,7 @@ const AvailableIcons = {
     faBook,
     faWallet,
     faInfo,
+    faDoorOpen,
 };
 
 const Icon = ({

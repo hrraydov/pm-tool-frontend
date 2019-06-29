@@ -1,15 +1,14 @@
 import React from 'react';
-
-import './project-details.css';
+import { compose } from 'redux';
 import {
-    Sidebar, Tasks, Resources, TaskDetails, TaskEdit,
+    Sidebar, Tasks, Resources, TaskDetails, TaskEdit, Budgets,
 } from 'containers';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import withProjectDetails from 'hoc/with-project-details';
-import LoaderHOC from 'hoc/loader';
-import { compose } from 'redux';
 import withCurrentProject from 'hoc/with-current-project';
+import LoaderHOC from 'hoc/loader';
 
+import './project-details.css';
 
 class ProjectDetails extends React.PureComponent {
     componentDidMount() {
@@ -40,6 +39,7 @@ class ProjectDetails extends React.PureComponent {
                             <Route exact path="/projects/:projectId/tasks/:id" component={TaskDetails} />
                             <Route exact path="/projects/:projectId/tasks/:id/edit" component={TaskEdit} />
                             <Route exact path="/projects/:projectId/resources" component={Resources} />
+                            <Route exact path="/projects/:projectId/budgets" components={Budgets} />
                             <Redirect to={`/projects/${this.props.match.params.projectId}/tasks`} />
                         </Switch>
                     </div>

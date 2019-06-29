@@ -1,5 +1,5 @@
 .projects-container {
-    padding: 10px;
+    padding: 70px;
 }
 
 .projects-container .project-item {
@@ -11,6 +11,18 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+.projects-container .project-item .details .details-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.projects-container .project-item .details .description {
+    margin: 10px 0;
 }
 
 .projects-container .project-item .actions {

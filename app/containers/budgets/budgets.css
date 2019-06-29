@@ -1,0 +1,18 @@
+.budgets-container .budget-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.budgets-container .budget-item .details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.budgets-container .budget-item .actions {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}

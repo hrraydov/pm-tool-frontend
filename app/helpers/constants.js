@@ -11,7 +11,7 @@ const DefaultSettings = {
 export const selectStyles = {
     container: styles => ({
         ...styles,
-        marginBottom: '15px',
+        margin: '15px 5px 30px 5px',
     }),
     control: styles => ({
         ...styles,

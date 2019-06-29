@@ -1,8 +1,8 @@
 import React from 'react';
-import { ProjectsService, ResourcesService, TasksService } from 'services';
+import { BudgetsService } from 'services';
 
-const withSaveResource = WrappedComponent => {
-    class WithSaveResource extends React.PureComponent {
+const withSaveBudget = WrappedComponent => {
+    class WithSaveBudget extends React.PureComponent {
         constructor(props) {
             super(props);
             this.state = {
@@ -23,7 +23,7 @@ const withSaveResource = WrappedComponent => {
                 isLoading: true,
             });
             if (!data.id) {
-                ResourcesService.create({
+                BudgetsService.create({
                     urlParams: {
                         projectId,
                     },
@@ -40,7 +40,7 @@ const withSaveResource = WrappedComponent => {
                 });
             } else {
                 const { id, ...rest } = data;
-                ResourcesService.edit({
+                BudgetsService.edit({
                     urlParams: {
                         projectId,
                         id,
@@ -62,7 +62,7 @@ const withSaveResource = WrappedComponent => {
         render() {
             return React.createElement(WrappedComponent, {
                 ...this.props,
-                saveResource: {
+                saveBudget: {
                     clearError: this.clearError,
                     save: this.save,
                     error: this.state.error,
@@ -72,7 +72,7 @@ const withSaveResource = WrappedComponent => {
         }
     }
 
-    return WithSaveResource;
+    return WithSaveBudget;
 };
 
-export default withSaveResource;
+export default withSaveBudget;

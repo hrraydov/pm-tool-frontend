@@ -14,7 +14,7 @@
         "arrow-parens": ["error", "as-needed"],
         "no-shadow": 0,
         "react/prop-types": 0,
-        "max-len": ["error", 150],
+        "max-len": ["error", 200],
         "react/destructuring-assignment": 0,
         "react/no-access-state-in-setstate": 0
     },

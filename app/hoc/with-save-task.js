@@ -1,5 +1,5 @@
 import React from 'react';
-import {ProjectsService, TasksService} from 'services';
+import { ProjectsService, TasksService } from 'services';
 
 const withSaveTask = WrappedComponent => {
     class WithSaveTask extends React.PureComponent {

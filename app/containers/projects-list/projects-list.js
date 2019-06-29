@@ -8,6 +8,8 @@ import { compose } from 'redux';
 import withSaveProject from 'hoc/with-save-project';
 import './projects-list.css';
 import { Link } from 'react-router-dom';
+import { Navigation } from 'components/common';
+import moment from 'moment';
 
 class ProjectsList extends React.PureComponent {
     constructor(props) {
@@ -89,6 +91,7 @@ class ProjectsList extends React.PureComponent {
                         </LoaderHOC>
                     </Modal>
                 )}
+                <Navigation userId={1} email="exmaple@mail.bg" />
                 <div className="projects-container">
                     <h1 className="text-center">Projects</h1>
                     <button
@@ -98,14 +101,20 @@ class ProjectsList extends React.PureComponent {
                             this.setState({ projectModal: true });
                         }}
                     >
+
+
                         Create new project
                     </button>
                     <List
                         renderItem={item => (
                             <div className="project-item">
                                 <div className="details">
-                                    <h3>{item.data.name}</h3>
-                                    <div>{item.data.description}</div>
+                                    <div className="details-header">
+                                        <h2>{item.data.name}</h2>
+                                        <div>{`Created on: ${moment(item.data.createdOn).format('DD/MM/YYYY')}`}</div>
+                                        <div>{`Last modified on: ${moment(item.data.modifiedOn).format('DD/MM/YYYY')}`}</div>
+                                    </div>
+                                    <div className="description">{item.data.description}</div>
                                 </div>
                                 <div className="actions">
                                     <button
@@ -127,7 +136,7 @@ class ProjectsList extends React.PureComponent {
                                         className="button button-primary button-round"
                                     >
 
-Select
+                                        Select
                                     </Link>
                                 </div>
                             </div>

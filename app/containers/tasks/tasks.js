@@ -1,17 +1,17 @@
 import React from 'react';
 import { compose } from 'redux';
-import withLoadTasks from 'hoc/with-load-tasks';
-import LoaderHOC from 'hoc/loader';
 import {
     Card, Input, Modal,
 } from 'components';
+import withLoadTasks from 'hoc/with-load-tasks';
+import LoaderHOC from 'hoc/loader';
 import withSaveTask from 'hoc/with-save-task';
 import withCurrentProject from 'hoc/with-current-project';
+import withTaskDetails from 'hoc/with-task-details';
 import Select from 'react-select';
 import { selectStyles, taskStatuses } from 'helpers/constants';
 
 import './tasks.css';
-import withTaskDetails from 'hoc/with-task-details';
 
 class Tasks extends React.PureComponent {
     constructor(props) {

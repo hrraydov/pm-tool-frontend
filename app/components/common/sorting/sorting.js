@@ -14,8 +14,7 @@ const Sorting = props => (
                 : props.order === 'desc' ? (
                     <div className="sorting-icons"><Icon name="faChevronUp" onClick={() => { props.onSort(props.field, 'asc'); }} /></div>
                 )
-                    :
-                    (
+                    : (
                         <div className="sorting-icons">
                             <Icon name="faSort" onClick={() => { props.onSort(props.field, 'asc'); }} />
                         </div>
@@ -30,4 +29,3 @@ Sorting.propTypes = {
 };
 
 export default Sorting;
-

@@ -3,8 +3,8 @@ import { compose } from 'redux';
 import withLoadProjects from 'hoc/with-load-projects';
 import withCurrentProject from 'hoc/with-current-project';
 import Async from 'react-select';
-import {withRouter} from "react-router-dom";
-import {selectStyles} from "helpers/constants";
+import { withRouter } from 'react-router-dom';
+import { selectStyles } from 'helpers/constants';
 
 class ProjectSelector extends React.PureComponent {
     componentDidMount() {
