@@ -20,6 +20,11 @@ class Sidebar extends React.PureComponent {
 
     }
 
+    onLogoutClick = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/';
+    };
+
     setActive = () => {
     };
 
@@ -56,7 +61,7 @@ class Sidebar extends React.PureComponent {
                     <Icon name="faWallet" />
                     <span className="title">Budgets</span>
                 </Link>
-                <div className="end-section">
+                <div className="end-section" onClick={this.onLogoutClick}>
                     <Link to="#" className="sidebar-item logout">
                         <Icon name="faDoorOpen" />
                         <span className="title">Logout</span>

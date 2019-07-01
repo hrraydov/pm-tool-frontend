@@ -39,6 +39,11 @@ class ProjectsList extends React.PureComponent {
         }
     }
 
+    onLogoutClick = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/';
+    }
+
     handleSaveProject = e => {
         e.preventDefault();
         e.stopPropagation();
@@ -91,7 +96,7 @@ class ProjectsList extends React.PureComponent {
                         </LoaderHOC>
                     </Modal>
                 )}
-                <Navigation userId={1} email="exmaple@mail.bg" />
+                <Navigation userId={1} email="exmaple@mail.bg" clickEvent={this.onLogoutClick}/>
                 <div className="projects-container">
                     <h1 className="text-center">Projects</h1>
                     <button
@@ -135,7 +140,6 @@ class ProjectsList extends React.PureComponent {
                                         to={`/projects/${item.data.id}/tasks`}
                                         className="button button-primary button-round"
                                     >
-
                                         Select
                                     </Link>
                                 </div>
