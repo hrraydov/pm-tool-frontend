@@ -1,5 +1,4 @@
 import React from 'react';
-import LoaderHOC from 'hoc/loader';
 import { ProjectsService } from 'services';
 
 const withLoadProjects = WrappedComponent => {
@@ -13,12 +12,6 @@ const withLoadProjects = WrappedComponent => {
             };
         }
 
-        clearError = () => {
-            this.setState({
-                error: null,
-            });
-        };
-
         componentDidMount() {
             this._isMounted = true;
         }
@@ -26,6 +19,12 @@ const withLoadProjects = WrappedComponent => {
         componentWillUnmount() {
             this._isMounted = false;
         }
+
+        clearError = () => {
+            this.setState({
+                error: null,
+            });
+        };
 
         loadProjects = query => {
             this.setState({

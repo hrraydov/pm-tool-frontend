@@ -1,15 +1,16 @@
 import React from 'react';
 import withLoadProjects from 'hoc/with-load-projects';
+import withSaveProject from 'hoc/with-save-project';
 import LoaderHOC from 'hoc/loader';
 import {
     Icon, Input, List, Modal,
 } from 'components';
 import { compose } from 'redux';
-import withSaveProject from 'hoc/with-save-project';
-import './projects-list.css';
 import { Link } from 'react-router-dom';
 import { Navigation } from 'components/common';
 import moment from 'moment';
+
+import './projects-list.css';
 
 class ProjectsList extends React.PureComponent {
     constructor(props) {
@@ -37,11 +38,6 @@ class ProjectsList extends React.PureComponent {
             });
             this.props.loadProjects();
         }
-    }
-
-    onLogoutClick = () => {
-        localStorage.removeItem('token');
-        window.location.href = '/';
     }
 
     handleSaveProject = e => {
@@ -96,7 +92,7 @@ class ProjectsList extends React.PureComponent {
                         </LoaderHOC>
                     </Modal>
                 )}
-                <Navigation userId={1} email="exmaple@mail.bg" clickEvent={this.onLogoutClick}/>
+                <Navigation />
                 <div className="projects-container">
                     <h1 className="text-center">Projects</h1>
                     <button
@@ -140,6 +136,7 @@ class ProjectsList extends React.PureComponent {
                                         to={`/projects/${item.data.id}/tasks`}
                                         className="button button-primary button-round"
                                     >
+
                                         Select
                                     </Link>
                                 </div>

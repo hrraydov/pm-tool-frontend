@@ -1,4 +1,3 @@
-import ResultsResponse from 'mocks/results.json';
 import { createServices } from './helper';
 
 const services = [
@@ -16,7 +15,7 @@ const services = [
     },
     {
         name: 'getAccount',
-        url: params => `/users/${params.userId}/account`,
+        url: '/users/account',
         method: 'GET',
     },
     {
@@ -27,7 +26,7 @@ const services = [
 ];
 
 const mocks = {
-    getAccount: ResultsResponse,
+
 };
 
 export default createServices(services, mocks);

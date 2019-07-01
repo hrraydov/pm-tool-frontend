@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './sidebar.css';
 import { Icon } from 'components';
 import { Link } from 'react-router-dom';
@@ -12,20 +11,9 @@ class Sidebar extends React.PureComponent {
         this.state = {};
     }
 
-    componentDidMount() {
-
-    }
-
-    componentDidUpdate() {
-
-    }
-
     onLogoutClick = () => {
         localStorage.removeItem('token');
         window.location.href = '/';
-    };
-
-    setActive = () => {
     };
 
     render() {
@@ -36,7 +24,7 @@ class Sidebar extends React.PureComponent {
                     <span className="title">Back to projects</span>
                 </Link>
                 <ProjectSelector />
-                <Link to="/users/:userId/profile" className="sidebar-item">
+                <Link to="/profile" className="sidebar-item">
                     <Icon name="faUser" />
                     <span className="title">Profile</span>
                 </Link>

@@ -7,12 +7,13 @@ import {
     Redirect,
     withRouter,
 } from 'react-router-dom';
-import { ProjectsList, Tasks, ProjectDetails } from 'containers';
+import { ProjectsList, ProjectDetails, UserDetails } from 'containers';
 
 const AuthenticatedRoutes = () => (
     <Switch>
         <Route exact path="/" component={ProjectsList} />
         <Route path="/projects/:projectId" component={ProjectDetails} />
+        <Route path="/profile" component={UserDetails} />
         <Redirect to="/" />
     </Switch>
 );

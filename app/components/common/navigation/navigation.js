@@ -1,15 +1,36 @@
 import React from 'react';
+import { compose } from 'redux';
 import { Link } from 'react-router-dom';
+import withUserLoad from 'hoc/with-user-load';
 
 import './navigation.css';
 
-const Navigation = ({ userId, email, clickEvent }) => (
-    <div className="navigation">
-        <div className="navigation-content">
-            <Link to={`/users/${userId}/profile`}>{`Hello, ${email}`}</Link>
-            <Link to="#" onClick={clickEvent}>Logout</Link>
-        </div>
-    </div>
-);
+class Navigation extends React.PureComponent {
+    componentDidMount() {
+        this.load();
+    }
 
-export default Navigation;
+    load = () => {
+        this.props.loadUser.load();
+    };
+
+    onLogoutClick = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/';
+    };
+
+    render() {
+        return (
+            <div className="navigation">
+                <div className="navigation-content">
+                    <Link to="/profile">{`Hello, ${this.props.loadUser.details && this.props.loadUser.details.email}`}</Link>
+                    <Link to="#" onClick={this.onLogoutClick}>Logout</Link>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default compose(
+    withUserLoad,
+)(Navigation);
