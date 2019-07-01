@@ -23,7 +23,6 @@ export const serviceBind = ({
 
     if (authorized) {
         const token = localStorage.getItem('token');
-
         authorizationHeaders.Authorization = `Bearer ${token}`;
     }
 
@@ -42,7 +41,14 @@ export const serviceBind = ({
     if (mockedResponse) {
         setTimeout(() => resolve(mockedResponse), 200);
     } else {
-        instance.request(request).then(({ data }) => {
+        getAxiosInstance().interceptors.response.use(response => (response), error => {
+            if (error.response.status === 401) {
+                localStorage.removeItem('token');
+                window.location.href = '/';
+            }
+        });
+
+        getAxiosInstance().request(request).then(({ data }) => {
             resolve(data);
         }, reject);
     }

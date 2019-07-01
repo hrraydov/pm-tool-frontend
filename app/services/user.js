@@ -16,8 +16,13 @@ const services = [
     },
     {
         name: 'getAccount',
-        url: '/account',
+        url: params => `/users/${params.userId}/account`,
         method: 'GET',
+    },
+    {
+        name: 'changeAccountData',
+        url: params => `/users/${params.userId}/account`,
+        method: 'POST',
     },
 ];
 
