@@ -19,9 +19,9 @@ const services = [
         method: 'GET',
     },
     {
-        name: 'changeAccountData',
-        url: params => `/users/${params.userId}/account`,
-        method: 'POST',
+        name: 'editAccount',
+        url: urlParams => `/users/${urlParams.userId}`,
+        method: 'PUT',
     },
 ];
 

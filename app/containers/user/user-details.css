@@ -1,0 +1,4 @@
+.user-details-container {
+    display: flex;
+    flex-direction: row;
+}
