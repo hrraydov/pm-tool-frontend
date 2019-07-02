@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 import { Navigation } from 'components/common';
 import moment from 'moment';
 import withLoadProjects from 'hoc/with-load-projects';
-import withSaveProject from 'hoc/with-save-project';
 import LoaderHOC from 'hoc/loader';
 import {
     Icon, Input, List, Modal,
 } from 'components';
-import { compose } from 'redux';
 import withSaveProject from 'hoc/with-save-project';
 import withDeleteProject from 'hoc/with-delete-project';
 
