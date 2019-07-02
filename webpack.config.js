@@ -10,7 +10,7 @@ const { name } = require('./package.json');
 const isDev = process.env.NODE_ENV !== 'production';
 
 const NODE_PORT = process.env.NODE_PORT || 3001;
-const API_URL = process.env.API_URL || 'http://localhost:3000';
+const API_URL = process.env.API_URL || 'http://localhost:3001';
 const DIST_PATH = path.resolve(__dirname, 'dist');
 const PUBLIC_PATH = process.env.PUBLIC_PATH || '/';
 
