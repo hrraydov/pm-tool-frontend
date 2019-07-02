@@ -1,11 +1,7 @@
 {
-    "name": "redbull-frontend",
+    "name": "pm-tool-frontend",
     "version": "1.0.0",
-    "description": "RedBull",
-    "repository": {
-        "type": "git",
-        "url": "https://gitlab.infoleven.zone/redbull/frontend.git"
-    },
+    "description": "PM Tool Frontend",
     "main": "index.js",
     "scripts": {
         "lint:js": "./node_modules/.bin/eslint app",
@@ -14,7 +10,6 @@
         "start": "cross-env NODE_ENV=development webpack-dev-server --mode development",
         "test": "npm run lint:js"
     },
-    "author": "Peter Igov",
     "license": "ISC",
     "husky": {
         "hooks": {
@@ -65,6 +60,7 @@
         "react-dom": "^16.8.6",
         "react-localization": "^1.0.13",
         "react-redux": "^7.0.2",
+        "react-router": "^5.0.1",
         "react-router-dom": "^5.0.0",
         "react-select": "^3.0.4",
         "redux": "^4.0.1",

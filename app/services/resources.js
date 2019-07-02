@@ -19,7 +19,7 @@ const services = [
     {
         name: 'delete',
         url: urlParams => `/projects/${urlParams.projectId}/resources/${urlParams.id}`,
-        mehtod: 'DELETE',
+        method: 'DELETE',
     },
 ];
 

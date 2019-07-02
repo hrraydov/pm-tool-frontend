@@ -6,7 +6,7 @@ const List = ({ items, renderItem }) => (
     <div className="list">
         {(!items || items.length === 0) && (<div>No items</div>)}
         {items.map(item => (
-            <div className="list-item" key={item.key}>
+            <div className="list-item" key={item.key ? item.key : item.id}>
                 {renderItem ? renderItem(item) : item.text}
             </div>
         ))}
