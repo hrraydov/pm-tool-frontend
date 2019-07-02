@@ -127,7 +127,7 @@ class UserDetails extends React.PureComponent {
                         <div className="details">
                             <div className="details-header">
                                 <h2>{this.props.loadUser.details && this.props.loadUser.details.email}</h2>
-                                <div>{`Last modified on: ${moment(this.props.loadUser.details && this.props.loadUser.details.modifiedOn ? this.props.loadUser.details.modifiedOn : ' - ').format('DD/MM/YYYY')}`}</div>
+                                <div>{`Last modified on: ${this.props.loadUser.details && this.props.loadUser.details.modifiedOn ? moment(this.props.loadUser.details.modifiedOn).format('DD/MM/YYYY') : ' - '}`}</div>
                             </div>
                             <hr className="horizontal-line" />
                             <div className="details-content">
