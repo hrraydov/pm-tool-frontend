@@ -1,5 +1,10 @@
 import React from 'react';
+import { compose } from 'redux';
+import { Link } from 'react-router-dom';
+import { Navigation } from 'components/common';
+import moment from 'moment';
 import withLoadProjects from 'hoc/with-load-projects';
+import withSaveProject from 'hoc/with-save-project';
 import LoaderHOC from 'hoc/loader';
 import {
     Icon, Input, List, Modal,
@@ -7,10 +12,8 @@ import {
 import { compose } from 'redux';
 import withSaveProject from 'hoc/with-save-project';
 import withDeleteProject from 'hoc/with-delete-project';
+
 import './projects-list.css';
-import { Link } from 'react-router-dom';
-import { Navigation } from 'components/common';
-import moment from 'moment';
 
 class ProjectsList extends React.PureComponent {
     constructor(props) {
@@ -98,7 +101,7 @@ class ProjectsList extends React.PureComponent {
                         </LoaderHOC>
                     </Modal>
                 )}
-                <Navigation userId={1} email="exmaple@mail.bg" />
+                <Navigation />
                 <div className="projects-container">
                     <h1 className="text-center">Projects</h1>
                     <button

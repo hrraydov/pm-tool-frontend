@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
-import { Loader } from 'hoc';
 import { getAccount } from 'actions/user';
 import { setPlatformType } from 'actions/application';
 import { getPlatformType, destroyInitialLoader } from 'helpers';
@@ -35,7 +34,6 @@ class Router extends PureComponent {
 
     render() {
         const { platformType } = this.props;
-
         return (
             <BrowserRouter basename={PUBLIC_PATH}>
                 <div className={`${platformType.toLowerCase()}`}>
