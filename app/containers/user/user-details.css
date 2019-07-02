@@ -1,4 +1,71 @@
 .user-details-container {
+    padding: 70px;
+}
+
+.user-details-container .container-item {
     display: flex;
     flex-direction: row;
 }
+
+.user-details-container .container-item .horizontal-line {
+    height: 1px;
+    width: 100%;
+    background-color: #f96332;
+    border: 0;
+}
+
+.user-details-container .container-item .details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid #f96332;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.user-details-container .container-item .details .bold {
+    font-weight: bold;
+}
+
+.user-details-container .container-item .details .details-content {
+    margin: 10px 0 0 10px;
+}
+
+.user-details-container .container-item .details .details-content :first-child {
+    margin-bottom: 5px;
+}
+
+.user-details-container .container-item .details .details-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.user-details-container .container-item .details .details-header :last-child {
+    margin-right: 10px;
+}
+
+.user-details-container .back-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    height: 50px;
+    font-size: 16px;
+}
+.user-details-container .back-link :first-child {
+    margin-right: 5px;
+}
+
+
+.user-details-container .container-item .details .description {
+    margin: 10px 0 10px 10px;
+}
+
+.text-center {
+    margin: 0 auto;
+}
+

@@ -41,12 +41,12 @@ export const serviceBind = ({
     if (mockedResponse) {
         setTimeout(() => resolve(mockedResponse), 200);
     } else {
-        getAxiosInstance().interceptors.response.use(response => (response), error => {
-            if (error.response.status === 401) {
+        /*getAxiosInstance().interceptors.response.use(response => (response), error => {
+            if (error.response && error.response.status === 401) {
                 localStorage.removeItem('token');
-                window.location.href = '/';
+                //window.location.href = '/login';
             }
-        });
+        });*/
 
         getAxiosInstance().request(request).then(({ data }) => {
             resolve(data);

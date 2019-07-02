@@ -16,7 +16,7 @@ class Navigation extends React.PureComponent {
 
     onLogoutClick = () => {
         localStorage.removeItem('token');
-        window.location.href = '/';
+        window.location.href = '/login';
     };
 
     render() {

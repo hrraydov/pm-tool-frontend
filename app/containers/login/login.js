@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Input } from 'components/common';
 import { login } from 'actions/user';
-
-import './login.css';
 import { Card, Icon, Modal } from 'components';
 import { UserService } from 'services';
 import LoaderHOC from 'hoc/loader';
 import { Link } from 'react-router-dom';
+
+import './login.css';
 
 class Login extends PureComponent {
     constructor(props) {

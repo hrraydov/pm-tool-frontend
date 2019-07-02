@@ -2,8 +2,13 @@ import React from 'react';
 import { compose } from 'redux';
 import withUserLoad from 'hoc/with-user-load';
 import withSaveUser from 'hoc/with-save-user';
-import { Input, Modal } from 'components/index';
 import LoaderHOC from 'hoc/loader';
+import moment from 'moment';
+import { Link } from 'react-router-dom';
+import {
+    Icon,
+    Input, Modal,
+} from 'components/index';
 import { Navigation } from 'components/common';
 
 import './user-details.css';
@@ -68,21 +73,21 @@ class UserDetails extends React.PureComponent {
                         disabled
                     />
                     <Input
-                        value={this.state.firstName}
+                        value={this.props.loadUser.details && this.props.loadUser.details.firstName ? this.props.loadUser.details.firstName : this.state.firstName}
                         placeholder="First name"
                         onChange={value => {
                             this.setState({ firstName: value.trim() });
                         }}
                     />
                     <Input
-                        value={this.state.lastName}
+                        value={this.props.loadUser.details && this.props.loadUser.details.lastName ? this.props.loadUser.details.lastName : this.state.lastName}
                         placeholder="Last name"
                         onChange={value => {
                             this.setState({ lastName: value.trim() });
                         }}
                     />
                     <Input
-                        value={this.state.description}
+                        value={this.props.loadUser.details && this.props.loadUser.details.description ? this.props.loadUser.details.description : this.state.description}
                         placeholder="Description"
                         onChange={value => {
                             this.setState({ description: value.trim() });
@@ -108,7 +113,7 @@ class UserDetails extends React.PureComponent {
                 {this.state.modal && this.renderModal()}
                 <Navigation />
                 <div className="user-details-container">
-                    <h1>User profile</h1>
+                    <h1 className="text-center">User profile</h1>
                     <button
                         type="button"
                         className="button button-primary"
@@ -118,7 +123,33 @@ class UserDetails extends React.PureComponent {
                     >
                         <span>Edit profile</span>
                     </button>
-                    <div>{this.props.loadUser.details && this.props.loadUser.details.email}</div>
+                    <div className="container-item">
+                        <div className="details">
+                            <div className="details-header">
+                                <h2>{this.props.loadUser.details && this.props.loadUser.details.email}</h2>
+                                <div>{`Last modified on: ${moment(this.props.loadUser.details && this.props.loadUser.details.modifiedOn ? this.props.loadUser.details.modifiedOn : ' - ').format('DD/MM/YYYY')}`}</div>
+                            </div>
+                            <hr className="horizontal-line" />
+                            <div className="details-content">
+                                <div>
+                                    <span className="bold">Name: </span>
+                                    {this.props.loadUser.details && this.props.loadUser.details.firstName ? this.props.loadUser.details.firstName : ' - '}
+                                </div>
+                                <div>
+                                    <span className="bold">Last name: </span>
+                                    {this.props.loadUser.details && this.props.loadUser.details.lastName ? this.props.loadUser.details.lastName : ' - '}
+                                </div>
+                            </div>
+                            <div className="description">
+                                <span className="bold">Description: </span>
+                                {this.props.loadUser.details && this.props.loadUser.details.description ? this.props.loadUser.details.description : ' - '}
+                            </div>
+                        </div>
+                    </div>
+                    <Link to="/" className="back-link">
+                        <Icon name="faChevronLeft" />
+                        <span>Back to projects</span>
+                    </Link>
                 </div>
             </LoaderHOC>
         );

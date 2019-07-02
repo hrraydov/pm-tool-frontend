@@ -39,7 +39,7 @@ class ProjectDetails extends React.PureComponent {
                             <Route exact path="/projects/:projectId/tasks/:id" component={TaskDetails} />
                             <Route exact path="/projects/:projectId/tasks/:id/edit" component={TaskEdit} />
                             <Route exact path="/projects/:projectId/resources" component={Resources} />
-                            <Route exact path="/projects/:projectId/budgets" components={Budgets} />
+                            <Route exact path="/projects/:projectId/budgets" component={Budgets} />
                             <Redirect to={`/projects/${this.props.match.params.projectId}/tasks`} />
                         </Switch>
                     </div>
