@@ -21,6 +21,7 @@ import {
     faWallet,
     faInfo,
     faDoorOpen,
+    faTrashAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 import './icon.css';
@@ -46,6 +47,7 @@ const AvailableIcons = {
     faWallet,
     faInfo,
     faDoorOpen,
+    faTrashAlt,
 };
 
 const Icon = ({

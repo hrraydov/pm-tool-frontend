@@ -9,6 +9,9 @@ import LoaderHOC from 'hoc/loader';
 import {
     Icon, Input, List, Modal,
 } from 'components';
+import { compose } from 'redux';
+import withSaveProject from 'hoc/with-save-project';
+import withDeleteProject from 'hoc/with-delete-project';
 
 import './projects-list.css';
 
@@ -29,7 +32,9 @@ class ProjectsList extends React.PureComponent {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.saveProject.isLoading !== this.props.saveProject.isLoading && this.props.saveProject.error === null) {
+        const { saveProject, deleteProject } = this.props;
+        if ((prevProps.saveProject.isLoading !== saveProject.isLoading && saveProject.error === null)
+        || (prevProps.deleteProject.isLoading !== deleteProject.isLoading && deleteProject.error === null)) {
             this.setState({
                 projectModal: false,
                 projectName: '',
@@ -50,6 +55,10 @@ class ProjectsList extends React.PureComponent {
             id: this.state.projectId,
         });
     };
+
+    handleDeleteProject = id => {
+        this.props.deleteProject.delete({ id });
+    }
 
     render() {
         return (
@@ -132,6 +141,13 @@ class ProjectsList extends React.PureComponent {
                                     >
                                         <Icon name="faEdit" />
                                     </button>
+                                    <button
+                                        type="button"
+                                        className="button button-primary button-round button-icon"
+                                        onClick={() => this.handleDeleteProject(item.data.id)}
+                                    >
+                                        <Icon name="faTrashAlt" />
+                                    </button>
                                     <Link
                                         to={`/projects/${item.data.id}/tasks`}
                                         className="button button-primary button-round"
@@ -153,4 +169,5 @@ class ProjectsList extends React.PureComponent {
 export default compose(
     withSaveProject,
     withLoadProjects,
+    withDeleteProject,
 )(ProjectsList);
