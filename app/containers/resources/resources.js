@@ -7,6 +7,7 @@ import {
 import withCurrentProject from 'hoc/with-current-project';
 import withSaveResource from 'hoc/with-save-resource';
 import withLoadResource from 'hoc/with-load-resources';
+import withDeleteResource from 'hoc/with-delete-resource';
 
 import './resources.css';
 
@@ -54,6 +55,12 @@ class Resources extends React.PureComponent {
             id: this.state.id,
         });
     };
+
+    handleDeleteResource = resourceId => {
+        const { currentProject: { details: { id } }, deleteResource } = this.props;
+
+        deleteResource.delete(id, { id: resourceId });
+    }
 
     renderModal = () => (
         <Modal onClose={() => {
@@ -131,6 +138,13 @@ class Resources extends React.PureComponent {
                                     >
                                         <Icon name="faEdit" />
                                     </button>
+                                    <button
+                                        type="button"
+                                        className="button button-primary button-round button-icon"
+                                        onClick={() => this.handleDeleteResource(item.data.id)}
+                                    >
+                                        <Icon name="faTrashAlt" />
+                                    </button>
                                 </div>
                             </div>
                         )}
@@ -145,4 +159,5 @@ export default compose(
     withCurrentProject,
     withSaveResource,
     withLoadResource,
+    withDeleteResource,
 )(Resources);

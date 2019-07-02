@@ -4,6 +4,7 @@ import LoaderHOC from 'hoc/loader';
 import withCurrentProject from 'hoc/with-current-project';
 import withSaveBudget from 'hoc/with-save-budget';
 import withLoadBudgets from 'hoc/with-load-budgets';
+import withDeleteBudgets from 'hoc/with-delete-budget';
 import {
     Icon, Input, List, Modal,
 } from 'components/index';
@@ -40,6 +41,10 @@ class Budgets extends React.PureComponent {
             });
             this.load();
         }
+
+        if (prevProps.deleteBudget.isLoading !== this.props.deleteBudget.isLoading && this.props.deleteBudget.error === null) {
+            this.load();
+        }
     }
 
     load = () => {
@@ -57,6 +62,12 @@ class Budgets extends React.PureComponent {
             id: this.state.id,
         });
     };
+
+    handleDeleteBudget = budgetId => {
+        const { deleteBudget, currentProject: { details: { id } } } = this.props;
+
+        deleteBudget.delete(id, { id: budgetId });
+    }
 
     renderModal = () => (
         <Modal onClose={() => {
@@ -84,6 +95,7 @@ class Budgets extends React.PureComponent {
                     />
                     <Input
                         value={this.state.amount}
+                        type="number"
                         placeholder="Amount"
                         onChange={value => {
                             this.setState({ amount: value.trim() });
@@ -143,6 +155,13 @@ class Budgets extends React.PureComponent {
                                     >
                                         <Icon name="faEdit" />
                                     </button>
+                                    <button
+                                        type="button"
+                                        className="button button-primary button-round button-icon"
+                                        onClick={() => this.handleDeleteBudget(item.data.id)}
+                                    >
+                                        <Icon name="faTrashAlt" />
+                                    </button>
                                 </div>
                             </div>
                         )}
@@ -157,4 +176,5 @@ export default compose(
     withCurrentProject,
     withSaveBudget,
     withLoadBudgets,
+    withDeleteBudgets,
 )(Budgets);

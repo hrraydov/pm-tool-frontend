@@ -1,6 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import withTaskDetails from 'hoc/with-task-details';
+import withDeleteTask from 'hoc/with-delete-task';
 import LoaderHOC from 'hoc/loader';
 import { Card, Icon } from 'components';
 import { Link } from 'react-router-dom';
@@ -20,11 +21,19 @@ class TaskDetails extends React.PureComponent {
         this.props.taskDetails.load(this.props.match.params.projectId, this.props.match.params.id);
     };
 
+    handleDeleteTask = () => {
+        const { match: { params: { projectId, id } }, deleteTask, history } = this.props;
+
+        deleteTask.delete(projectId, { id });
+
+        history.push(`/projects/${projectId}/tasks`);
+    }
+
     render() {
         return (
             <LoaderHOC isLoading={this.props.taskDetails.isLoading} loadingTextKey="Loading task">
                 {this.props.taskDetails.error
-                && <div className="danger">{this.props.taskDetails.error}</div>}
+                    && <div className="danger">{this.props.taskDetails.error}</div>}
                 {this.props.taskDetails.details && (
                     <>
                         <div className="row justify-space-between">
@@ -38,6 +47,11 @@ class TaskDetails extends React.PureComponent {
                                 <Link className="primary" to={`/projects/${this.props.match.params.projectId}/tasks/${this.props.match.params.id}/edit`}>
                                     <Icon name="faEdit" />
                                 </Link>
+                                <Icon
+                                    className="delete-icon primary"
+                                    name="faTrashAlt"
+                                    onClick={() => this.handleDeleteTask()}
+                                />
                             </div>
                         </div>
                         <h1 className="text-center">{`${this.props.taskDetails.details.name} (${this.props.taskDetails.details.status})`}</h1>
@@ -53,4 +67,7 @@ class TaskDetails extends React.PureComponent {
     }
 }
 
-export default compose(withTaskDetails)(TaskDetails);
+export default compose(
+    withTaskDetails,
+    withDeleteTask,
+)(TaskDetails);

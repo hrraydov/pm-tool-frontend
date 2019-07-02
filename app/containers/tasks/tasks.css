@@ -26,3 +26,7 @@
 .tasks-container .board .board-col:not(:last-of-type) {
     border-right: 1px solid var(--primary-light-color);
 }
+
+.delete-icon { 
+    margin-left: 10px;
+}

@@ -16,6 +16,11 @@ const services = [
         url: urlParams => `/projects/${urlParams.projectId}/resources/${urlParams.id}`,
         method: 'PUT',
     },
+    {
+        name: 'delete',
+        url: urlParams => `/projects/${urlParams.projectId}/resources/${urlParams.id}`,
+        mehtod: 'DELETE',
+    },
 ];
 
 export default createServices(services);
