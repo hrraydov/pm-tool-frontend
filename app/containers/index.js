@@ -12,3 +12,4 @@ export { default as TaskDetails } from './task-details/task-details';
 export { default as TaskEdit } from './task-edit/task-edit';
 export { default as Budgets } from './budgets/budgets';
 export { default as UserDetails } from './user/user-details';
+export { default as ResourceChooser } from './resource-chooser/resource-chooser';

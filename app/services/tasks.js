@@ -23,7 +23,22 @@ const services = [
     },
     {
         name: 'delete',
-        url: urlParams => `/projects/${urlParams.projectId}/taks/${urlParams.id}`,
+        url: urlParams => `/projects/${urlParams.projectId}/tasks/${urlParams.id}`,
+        method: 'DELETE',
+    },
+    {
+        name: 'getLinkedResources',
+        url: urlParams => `/projects/${urlParams.projectId}/tasks/${urlParams.taskId}/resources`,
+        method: 'GET',
+    },
+    {
+        name: 'linkResource',
+        url: urlParams => `/projects/${urlParams.projectId}/tasks/${urlParams.taskId}/resources/${urlParams.resourceId}/link`,
+        method: 'POST',
+    },
+    {
+        name: 'unlinkResource',
+        url: urlParams => `/projects/${urlParams.projectId}/tasks/${urlParams.taskId}/resources/${urlParams.resourceId}`,
         method: 'DELETE',
     },
 ];
